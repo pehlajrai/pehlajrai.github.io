@@ -758,12 +758,10 @@ a.tma-contact-highlight:focus {
   box-shadow: 0 6px 16px rgba(255, 122, 0, 0.35);
 }
 .tma-footer-columns {
-  display: flex;
-  flex-wrap: wrap;
   padding: 40px 0 20px;
 }
-.tma-footer-columns > [class*="col-"] {
-  flex: 1 1 170px;
+.tma-footer-columns [class*="col-"] {
+  margin-bottom: 20px;
 }
 .tma-footer-columns h4 {
   color: #fff;
