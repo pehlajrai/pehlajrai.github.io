@@ -1,0 +1,697 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>TMA — AI-powered Product Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="TMA delivers AI-first product experiences for modern businesses." />
+	<meta name="keywords" content="startup, product, AI, mobile, web, SaaS, analytics" />
+	<meta name="author" content="TMA" />
+
+	<!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="TMA — AI-powered Product Platform"/>
+	<meta property="og:image" content="images/cover_bg_3.jpg"/>
+	<meta property="og:url" content="https://pehlajrai.github.io/"/>
+	<meta property="og:site_name" content="TMA"/>
+	<meta property="og:description" content="We help teams build modern digital products with AI, mobile-first design and scalable APIs."/>
+	<meta name="twitter:title" content="TMA — AI-powered Product Platform" />
+	<meta name="twitter:image" content="images/cover_bg_3.jpg" />
+	<meta name="twitter:url" content="https://pehlajrai.github.io/" />
+	<meta name="twitter:card" content="summary_large_image" />
+
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+		<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+		
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">	
+	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="display-t js-fullheight">
+						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
+							<!--div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="pehlajtejani" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://pk.linkedin.com/in/pehlajtejani?trk=profile-badge">Pehlaj</a></div-->
+              
+							<div class="profile-thumb" style="background: url(images/user-3.jpg);"></div>
+							<h1><span>TMA</span></h1>
+							<h3><span>AI-first product experiences for modern teams</span></h3>
+							<p>We build mobile-first applications, scalable APIs and insight-led workflows that help businesses launch faster and grow smarter.</p>
+							<p>
+								<a href="#fh5co-about" class="btn btn-primary btn-lg">Learn More</a>
+								<a href="#fh5co-started" class="btn btn-default btn-lg">Book a Demo</a>
+							</p>
+							<ul class="fh5co-social-icons">
+								<li><a href="https://www.linkedin.com/company/TMA" target="_blank"><i class="icon-linkedin2"></i></a></li>
+								<li><a href="https://twitter.com/TMAtech" target="_blank"><i class="icon-twitter2"></i></a></li>
+								<li><a href="https://www.facebook.com/TMAtech" target="_blank"><i class="icon-facebook2"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="fh5co-about" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>About Me</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">
+					<ul class="info">
+						<li><span class="first-block">Full Name:</span><span class="second-block">PEHLAJ</span></li>
+						<li><span class="first-block">Phone:</span><span class="second-block">+ 92 335 2899951</span></li>
+						<li><span class="first-block">Email:</span><span class="second-block">pehlaj.rai108@gmail.com</span></li>
+						<li><span class="first-block">Website:</span><span class="second-block">https://pehlajrai.github.io/</span></li>
+					</ul>
+				</div>
+				<div class="col-md-7">
+					<h2>Greetings!</h2>
+					<p>An Enthusiast Programmer, working as a Principal Software Engineer (Technical Lead) at the 10Pearls, having around 10 years professional experience of working in different programming languages.</p>
+					<p> Developed a wide range of applications using Java, Android, Xamarin, Objective-C, React Native and Node JS.</p>
+					<!--p>
+						<ul class="fh5co-social-icons">
+							<li><a href="https://www.linkedin.com/in/pehlajtejani" target="_blank"><i class="icon-linkedin2"></i></a></li>
+							<li><a href="https://twitter.com/pgtejani" target="_blank"><i class="icon-twitter2"></i></a></li>
+							<li><a href="https://facebook.com/raitejani" target="_blank"><i class="icon-facebook2"></i></a></li>
+							<!--li><a href="#" target="_blank"><i class="icon-dribbble2"></i></a></li>
+						</ul>
+					</p-->
+					<a href="https://stackoverflow.com/users/6027638/pehlaj" target="_blank"><img src="https://stackoverflow.com/users/flair/6027638.png" width="208" height="58" alt="profile for Pehlaj at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Pehlaj at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
+				</div>
+			</div>
+			<br/>
+			<br/>
+					
+			<h2>Technical Skills </h2>
+			<b>Android:</b>
+			Keystore, MPChartsAndroid, Apk Decompilation, Obfuscation, Material Design, Design Library, AndroidX, Mixpanel, Firebase, Google Analytics, Glide, Picasso, Retrofit, Recycler View, Robotium, Crashlytics, SDP, ConstraintLayout, Google Places APIs, Image Compression, Fragments, Multi-screen Support, ActiveAndroid, GSON, AsnycTask, JSON/GSON, Graph-view, Google Maps V2, Location API, Facebook API.
+
+			<br />
+			<br />
+			<b>iOS:</b>
+			- Protocols, Delegates, Auto Layout, Storyboard, Constraints, MVC, plist, Keychain, NIB/XIBs, Pods, SPM, Charts.
+
+			<br />
+			<br />
+			<b>React Native:</b>
+			- Redux, Router, JSX, Hooks, FlatList, Fetch, Axios, FlexBox, AsyncStoreage, Bridge, Redux-Thunk, Saga, Deep Linking, Styled-components
+
+			<br />
+			<br />
+			<b>Apps:</b>
+			https://play.google.com/store/apps/details?id=com.tejani.pg.gallery
+			https://apkpure.com/ooredoo-bizstore/com.ooredoobizstore
+			https://apkpure.com/telenor-food-court/com.econceptions.foodcourt
+			https://play.google.com/store/apps/details?id=pk.com.zong.bizstore
+			https://apkpure.com/eschool-notifier/com.gomeco.messages
+			https://play.google.com/store/apps/details?id=com.idro.spiff
+			https://play.google.com/store/apps/details?id=pk.com.mobilink.bizstore
+
+			<br />
+			<br />
+			<b>Databases:</b>
+			SQLite, Realm, ActiveAndroid, MySql, PostGres, Oracle.
+
+			<br />
+			<br />
+			<b>Java:</b>
+			J2SE, JDBC, iText, J2EE (Servlets, JSP, JSF 1.2/2.2, JOOQ, Hibernate, PrimeFaces, RichFaces, iText, JSTL, Hibernate, Jasper Reports), JDBC
+
+			<br />
+			<br />
+			<b>JavaScript​:</b>
+			Node.JS, React Native, DOM Scripting
+
+			<br />
+			<br />
+			<b>Python:</b>
+			- django
+				
+		</div>
+	</div>
+
+	<div id="fh5co-resume" class="fh5co-bg-color">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2 style="margin-bottom: 0px">Our Journey</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0">
+					<ul class="timeline">
+						<li class="timeline-heading text-center animate-box">
+							<div><h3>Milestones</h3></div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Launch</h3>
+									<span class="company">Q1 2024</span>
+								</div>
+								<div class="timeline-body">
+									<ul>
+										<li>Founded TMA to help teams launch AI-enabled products rapidly.</li>
+										<li>Defined our first product vision and delivered a MVP for early customer feedback.</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="animate-box timeline-unverted">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Product Launch</h3>
+									<span class="company">Q3 2024</span>
+								</div>
+								<div class="timeline-body">
+									<ul style="text-align: left">
+										<li>Delivered our first customer-facing platform with mobile and analytics capabilities.</li>
+										<li>Introduced modern dashboards, APIs, and automated workflows for early adopters.</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Customer Growth</h3>
+									<span class="company">Q1 2025</span>
+								</div>
+								<div class="timeline-body">
+									<ul>
+										<li>Onboarded enterprise clients and integrated with CRM, payments, and analytics tools.</li>
+										<li>Scaled our platform with improved reliability, performance and team support.</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="animate-box timeline-unverted">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Scale</h3>
+									<span class="company">Ongoing</span>
+								</div>
+								<div class="timeline-body">
+									<ul style="text-align: left">
+										<li>Continue expanding our product suite with AI, automation and customer success tools.</li>
+										<li>Deliver expert engineering, analytics and growth support for scaling product teams.</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+				    </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+						<!--li class="animate-box timeline-unverted">
+							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Graduation</h3>
+									<span class="company">College Name - 1994 - 1998</span>
+								</div>
+								<div class="timeline-body">
+									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								</div>
+							</div>
+						</li-->
+			    	</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="fh5co-features" class="animate-box">
+		<div class="container">
+			<div class="services-padding">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2>My Services</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 text-center">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-paintbrush"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Mobile Applications</h3>
+								<p>Native Android/iOS applications using Kotlin/Java, Objective-C and Swift. Cross platforms mobile applications using React Native and Xamarin.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 text-center">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-briefcase"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Web APIs</h3>
+								<p>Node Js, Java, Python (django)</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-search"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Analytics</h3>
+								<p>Google Analytics and Mixpanel</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col-md-4 text-center">
+
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-bargraph"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Web Development</h3>
+								<p>Web Applications using React JS, Node JS And JAVA.</p>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="col-md-4 text-center">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-genius"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Consultancy</h3>
+								<p>Help you create your website, mobile application. Deployment of web applications and publishing mobile apps to Apple/Play Stores.</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-chat"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Support</h3>
+								<p>Maintaining code base, automating the release, providing technical solutions of problems.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-skills" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Skills</h2>
+				</div>
+			</div>
+			<div class="row row-pb-md">
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="95"><span><strong>Android/Java</strong>80%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="75"><span><strong>Objective-C</strong>70%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="70"><span><strong>Swift</strong>70%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="70"><span><strong>Node Js</strong>70%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="85"><span><strong>Xamarin</strong>70%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="90"><span><strong>React Native</strong>70%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="85"><span><strong>MySQL</strong>85%</span></div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+					<div class="chart" data-percent="80"><span><strong>PostGreSQL</strong>80%</span></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="progress-wrap">
+						<h3><span class="name-left">Android</span><span class="value-right">95%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-1 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">iOS</span><span class="value-right">80%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-3 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Java</span><span class="value-right">90%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-2 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">Web Development</span><span class="value-right">85%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-4 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+						  </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="progress-wrap">
+						<h3><span class="name-left">SQLite</span><span class="value-right">100%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-5 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">MySQL</span><span class="value-right">85%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-striped active" role="progressbar"
+						  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">PostGreSQL</span><span class="value-right">80%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-1 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+						  </div>
+						</div>
+					</div>
+					<div class="progress-wrap">
+						<h3><span class="name-left">jQuery</span><span class="value-right">75%</span></h3>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-3 progress-bar-striped active" role="progressbar"
+						  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-work" class="fh5co-bg-dark">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Work</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="https://play.google.com/store/apps/details?id=com.tejani.pg.gallery" target="_blank" class="work" style="background-image: url(images/icon.png);">
+						<div class="desc">
+							<h3>File Explorer</h3>
+							<span>Gallery</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="https://play.google.com/store/apps/details?id=pk.com.mobilink.bizstore&hl=en" target="_blank" class="work" style="background-image: url(images/portfolio-8.jpg);">
+						<div class="desc">
+							<h3>Mobilink Discount Bazar</h3>
+							<span>DiscountBazar</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="https://play.google.com/store/apps/details?id=pk.com.zong.bizstore&hl=en" target="_blank" class="work" style="background-image: url(images/portfolio-2.jpg);">
+						<div class="desc">
+							<h3>Zong BizStore</h3>
+							<span>BizStore</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="https://apkpure.com/ufone-food-court/com.econceptions.ufone.foodcourt" target="_blank" class="work" style="background-image: url(images/portfolio-8.jpg);">
+						<div class="desc">
+							<h3>Ufone Food Court</h3>
+							<span>FoodCourt</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="https://play.google.com/store/apps/details?id=com.idro.spiff" target="_blank" class="work" style="background-image: url(images/portfolio-4.jpg);">
+						<div class="desc">
+							<h3>iDro Spiff</h3>
+							<span>Calcuate your commission of different projects of a company</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="https://apkpure.com/ufone-food-court/com.econceptions.ufone.foodcourt" target="_blank" class="work" style="background-image: url(images/portfolio-5.jpg);">
+						<div class="desc">
+							<h3>AlAnwar</h3>
+							<span>Best shopping guidance by AlAnwar</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="https://apkpure.com/ooredoo-bizstore/com.ooredoo.bizstore" target="_blank" class="work" style="background-image: url(images/portfolio-6.jpg);">
+						<div class="desc">
+							<h3>Ooredoo Bizstore</h3>
+							<span></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 text-center col-padding animate-box">
+					<a href="#" class="work" style="background-image: url(images/portfolio-7.jpg);">
+						<div class="desc">
+							<h3>ZeitWert</h3>
+							<span>Managing contacts, creating group. Group chat etc</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-blog" style="display:none;">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Post on Medium</h2>
+					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="fh5co-blog animate-box">
+						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-1.jpg);"></a>
+						<div class="blog-text">
+							<span class="posted_on">Mar. 15th 2016</span>
+							<h3><a href="#">Photoshoot On The Street</a></h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<ul class="stuff">
+								<li><i class="icon-heart2"></i>249</li>
+								<li><i class="icon-eye2"></i>308</li>
+								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+							</ul>
+						</div> 
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="fh5co-blog animate-box">
+						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-2.jpg);"></a>
+						<div class="blog-text">
+							<span class="posted_on">Mar. 15th 2016</span>
+							<h3><a href="#">Surfing at Philippines</a></h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<ul class="stuff">
+								<li><i class="icon-heart2"></i>249</li>
+								<li><i class="icon-eye2"></i>308</li>
+								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+							</ul>
+						</div> 
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="fh5co-blog animate-box">
+						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-3.jpg);"></a>
+						<div class="blog-text">
+							<span class="posted_on">Mar. 15th 2016</span>
+							<h3><a href="#">Capture Living On Uderwater</a></h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<ul class="stuff">
+								<li><i class="icon-heart2"></i>249</li>
+								<li><i class="icon-eye2"></i>308</li>
+								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+							</ul>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="fh5co-started" class="fh5co-bg-dark">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Contact Me!</h2>
+					<p>You can reach me at pehlaj.rai108@gmail.com OR WhatZApp me on 0092 335 28 999 51</p>
+					<p><a href="#" class="btn btn-default btn-lg">Contact Us</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-consult">
+		<div class="video fh5co-video" style="background-image: url(images/cover_bg_1.jpg);">
+			<div class="overlay"></div>
+		</div>
+		<div class="choose animate-box">
+			<h2>Contact</h2>
+			<form action="#">
+				<div class="row form-group">
+					<div class="col-md-6">
+						<input type="text" id="fname" class="form-control" placeholder="Your firstname">
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-6">
+						<input type="text" id="lname" class="form-control" placeholder="Your lastname">
+					</div>
+				</div>
+
+				<div class="row form-group">
+					<div class="col-md-12">
+						<input type="text" id="email" class="form-control" placeholder="Your email address">
+					</div>
+				</div>
+
+				<div class="row form-group">
+					<div class="col-md-12">
+						<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
+					</div>
+				</div>
+
+				<div class="row form-group">
+					<div class="col-md-12">
+						<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Send Message" class="btn btn-primary">
+				</div>
+
+			</form>	
+		</div>
+	</div>
+
+	<div id="map" class="fh5co-map"></div>
+	</div>
+	
+	<div id="fh5co-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>&copy; 2019 Free HTML5 Template. All Rights Reserved. <br>Designed by <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.com" target="_blank">Unsplash</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Easy PieChart -->
+	<script src="js/jquery.easypiechart.min.js"></script>
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWTqf6DfoAHuXtvgF-dNvrM7yU7680tGw"></script>
+	<script src="js/google_map.js"></script>
+	
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+

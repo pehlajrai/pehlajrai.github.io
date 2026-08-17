@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6, figure {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 144, 0, 0.9);
+  background: rgba(10, 10, 15, 0.65);
 }
 #fh5co-header .display-t,
 .fh5co-cover .display-t {
@@ -221,59 +221,6 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 30px;
 }
 
-#fh5co-features {
-  background: #FF9000;
-}
-#fh5co-features h2 {
-  color: #fff;
-}
-#fh5co-features .services-padding {
-  padding: 2em 0;
-}
-#fh5co-features .feature-left {
-  margin-bottom: 40px;
-  float: left;
-}
-@media screen and (max-width: 992px) {
-  #fh5co-features .feature-left {
-    margin-bottom: 30px;
-  }
-}
-#fh5co-features .feature-left .icon {
-  display: table;
-  text-align: center;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  background: #fff;
-  margin-bottom: 20px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-}
-#fh5co-features .feature-left .icon i {
-  font-size: 50px;
-  display: table-cell;
-  vertical-align: middle;
-  height: 100px;
-  color: #FF9000 !important;
-}
-#fh5co-features .feature-left .feature-copy {
-  width: 100%;
-}
-#fh5co-features .feature-left h3 {
-  font-size: 24px;
-  font-weight: 400;
-  color: #fff;
-}
-#fh5co-features .feature-left p {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
-}
-#fh5co-features .feature-left p:last-child {
-  margin-bottom: 0;
-}
 #fh5co-features .feature-left p a {
   color: #000 !important;
 }
@@ -308,7 +255,6 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-bg-dark {
   background: #2F3C4F;
-  background: #FF9000;
 }
 .fh5co-bg-dark .fh5co-heading h2 {
   color: #fff !important;
