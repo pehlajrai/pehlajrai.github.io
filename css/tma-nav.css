@@ -107,7 +107,7 @@
   padding: 30px;
   margin-bottom: 30px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.7s ease, box-shadow 0.7s ease;
 }
 .tma-testimonial:hover {
   transform: translateY(-6px);
@@ -116,7 +116,7 @@
 
 /* Portfolio work tiles — subtle lift + zoom to match the site's tactile hover language */
 .work {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.7s ease, box-shadow 0.7s ease;
 }
 .work:hover {
   transform: translateY(-6px) scale(1.02);
@@ -128,7 +128,7 @@
 .form-control:active {
   border-color: #FF9000 !important;
   box-shadow: 0 0 0 4px rgba(255, 144, 0, 0.12) !important;
-  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  transition: border-color 0.65s ease, box-shadow 0.65s ease;
 }
 .tma-testimonial p.quote {
   font-size: 16px;
@@ -155,7 +155,7 @@
 /* Services — category-wise breakdown, modern card layout */
 .tma-services-section {
   background: #f7f7f9;
-  padding: 80px 0;
+  padding: 40px 0;
 }
 .tma-equal-row {
   display: flex;
@@ -173,7 +173,7 @@
   box-shadow: 0 4px 20px rgba(20, 20, 30, 0.06);
   padding: 36px 32px 30px;
   width: 100%;
-  transition: transform 0.45s ease, box-shadow 0.45s ease;
+  transition: transform 0.75s ease, box-shadow 0.75s ease;
 }
 .tma-category-card:hover {
   transform: translateY(-6px);
@@ -228,10 +228,8 @@
   flex-shrink: 0;
 }
 
-/* Consistent vertical rhythm across all major sections — vendor CSS used an
-   inconsistent 2em (32px, too tight) on some IDs and nothing at all on others
-   (custom sections ended up relying on stacked inner margins). Normalize to
-   a single 60-100px range everywhere. */
+/* Consistent vertical rhythm across all major sections — standardized to
+   24px top and bottom everywhere. */
 #fh5co-about,
 #fh5co-values,
 #fh5co-leadership,
@@ -246,31 +244,10 @@
 #fh5co-services-intro,
 #fh5co-service-categories,
 #fh5co-features {
-  padding: 80px 0 !important;
-}
-@media screen and (max-width: 768px) {
-  #fh5co-about,
-  #fh5co-values,
-  #fh5co-leadership,
-  #fh5co-quality,
-  #fh5co-resume,
-  #fh5co-skills,
-  #fh5co-started,
-  #fh5co-work,
-  #fh5co-team,
-  #fh5co-testimonials,
-  #fh5co-consult,
-  #fh5co-services-intro,
-  #fh5co-service-categories,
-  #fh5co-features {
-    padding: 60px 0 !important;
-  }
+  padding: 40px 0 !important;
 }
 #fh5co-features .services-padding {
   padding: 0;
-}
-#fh5co-started {
-  padding-bottom: 60px !important;
 }
 
 /* Feature-left icon cards — vendor CSS only styled these inside #fh5co-features
@@ -279,7 +256,7 @@
    the home page's "What We Do" headings white-on-light-gray. Override consistently. */
 .feature-left {
   margin-bottom: 40px;
-  transition: transform 0.4s ease;
+  transition: transform 0.7s ease;
 }
 .feature-left:hover {
   transform: translateY(-4px);
@@ -314,7 +291,7 @@
 
 /* Buttons — subtle lift on hover for more tactile feel */
 .btn-lg, .btn-primary, .btn-default {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.65s ease, box-shadow 0.65s ease;
 }
 .fh5co-cover .btn:hover {
   transform: translateY(-2px);
@@ -352,7 +329,7 @@ a.tma-contact-highlight:focus {
   padding: 8px 20px;
   border-radius: 24px;
   font-size: 14px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.65s ease, box-shadow 0.65s ease;
 }
 .tma-whatsapp-btn:hover,
 .tma-whatsapp-btn:focus {
@@ -362,9 +339,33 @@ a.tma-contact-highlight:focus {
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
 }
 
-/* "What We Do" heading — pulled up 50px per request */
-#fh5co-features .fh5co-heading h2 {
-  margin-top: -50px;
+/* Scroll-reveal system — driven by js/scroll-reveal.js toggling .in-view
+   (via IntersectionObserver), so elements re-animate every time they cross
+   the viewport edge. Left/right slides only — no top/bottom movement. */
+.animate-box {
+  opacity: 0;
+  transform: translateX(-56px);
+  transition: opacity 1.0s cubic-bezier(0.22, 1, 0.36, 1), transform 1.0s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+.animate-box[data-animate-effect="fadeInLeft"] {
+  transform: translateX(-56px);
+}
+.animate-box[data-animate-effect="fadeInRight"] {
+  transform: translateX(56px);
+}
+.animate-box[data-animate-effect="fadeIn"] {
+  transform: none;
+}
+.animate-box.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-box {
+    transition: opacity 0.3s ease;
+    transform: none !important;
+  }
 }
 
 /* Section heading separator — small accent bar under every h2 site-wide */
@@ -387,12 +388,7 @@ a.tma-contact-highlight:focus {
   background: #fff;
 }
 
-/* Our Capabilities / Leadership / Our Journey — pulled up 25px, distinct looks */
-#fh5co-skills .fh5co-heading h2,
-#fh5co-leadership .fh5co-heading h2,
-#fh5co-resume .fh5co-heading h2 {
-  margin-top: -25px;
-}
+/* Our Capabilities / Leadership / Our Journey — distinct looks */
 #fh5co-leadership {
   background: #fff;
 }
@@ -423,7 +419,7 @@ a.tma-contact-highlight:focus {
 /* About — stat strip */
 .tma-stats-section {
   background: #14141a;
-  padding: 60px 0;
+  padding: 40px 0;
 }
 .tma-stat {
   text-align: center;
@@ -483,7 +479,7 @@ a.tma-contact-highlight:focus {
 }
 .tma-footer a {
   color: #b8b8bd;
-  transition: color 0.4s ease;
+  transition: color 0.7s ease;
 }
 .tma-footer a:hover,
 .tma-footer a:focus {
@@ -619,7 +615,7 @@ a.tma-contact-highlight:focus {
   left: 40px;
 }
 .tma-team-name-text {
-  text-align: left;
+  text-align: center;
 }
 .tma-team-name-text h3 {
   margin-bottom: 2px;
@@ -637,7 +633,7 @@ a.tma-contact-highlight:focus {
   align-items: center;
   justify-content: center;
   color: #FF9000;
-  transition: transform 0.35s ease, border-color 0.35s ease;
+  transition: transform 0.65s ease, border-color 0.65s ease;
 }
 .tma-team-linkedin:hover {
   transform: translateY(-2px);

@@ -136,7 +136,8 @@
 
 	
 	$(function(){
-		contentWayPoint();
+		// contentWayPoint() disabled — replaced by js/scroll-reveal.js, which
+		// re-triggers on every scroll direction instead of firing once.
 		goToTop();
 		loaderPage();
 		fullHeight();
