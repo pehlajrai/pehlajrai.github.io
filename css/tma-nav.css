@@ -1,15 +1,62 @@
+/* Typography — vendor theme used Space Mono (monospace) for everything, which
+   reads as a code-editor/dev-tool font and undercuts the business-facing
+   copy throughout the site. Poppins for headings/UI, Inter for body copy.
+   The Kaushan Script "TMA" wordmark is untouched — its own more specific
+   selector still wins. */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6,
+.btn,
+.tma-navbar .navbar-brand,
+.tma-navbar .navbar-nav > li > a,
+.tma-footer-brand,
+.tma-footer-columns h4,
+.tma-team-card .role,
+.tma-category-card h3,
+.tma-stat-number {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+.fh5co-cover .display-tc h1 {
+  font-family: "Kaushan Script", cursive;
+}
+
 /* TMA site navigation + inner page banners */
 
 .tma-navbar {
-  background: rgba(15, 15, 20, 0.95);
+  background: linear-gradient(180deg, rgba(15, 15, 20, 0.97), rgba(12, 12, 16, 0.94));
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
   border: none;
+  border-bottom: 1px solid rgba(255, 144, 0, 0.12);
   border-radius: 0;
   margin-bottom: 0;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   z-index: 1000;
 }
-.tma-navbar .navbar-brand {
-  color: #FF9000;
+@keyframes tma-gradient-sweep {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+/* Shared "TMA" gradient wordmark treatment — used by the nav brand, footer
+   brand, and the copyright-line "TMA", so all three stay in sync. */
+.tma-gradient-text {
+  display: inline-block;
   font-weight: 700;
+  background-image: linear-gradient(90deg, #FF9000, #FFD37A, #FF7A00, #FFB44D, #FF9000);
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: font-size 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), letter-spacing 0.4s ease, background-position 0.6s ease;
+}
+.tma-gradient-text:hover,
+.tma-gradient-text:focus {
+  animation: tma-gradient-sweep 1.6s linear infinite;
+}
+.tma-navbar .navbar-brand {
   letter-spacing: 2px;
   font-size: 22px;
   height: auto;
@@ -19,9 +66,14 @@
 }
 .tma-navbar .navbar-brand:hover,
 .tma-navbar .navbar-brand:focus {
-  color: #ffb347;
+  font-size: 27px;
+  letter-spacing: 3px;
+}
+.tma-navbar .navbar-nav > li {
+  position: relative;
 }
 .tma-navbar .navbar-nav > li > a {
+  position: relative;
   color: #f2f2f2;
   font-weight: 600;
   font-size: 13px;
@@ -29,15 +81,43 @@
   text-transform: uppercase;
   padding-top: 22px;
   padding-bottom: 22px;
+  background: none;
+  transition: color 0.35s ease, font-size 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), letter-spacing 0.4s ease;
 }
-.tma-navbar .navbar-nav > li > a:hover,
-.tma-navbar .navbar-nav > li > a:focus {
-  color: #FF9000;
-  background: transparent;
+.tma-navbar .navbar-nav > li > a::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 14px;
+  height: 2px;
+  background: linear-gradient(90deg, #FFB44D, #FF7A00);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s ease;
 }
 .tma-navbar .navbar-nav > li.active > a {
   color: #FF9000;
   background: transparent;
+}
+.tma-navbar .navbar-nav > li > a:hover,
+.tma-navbar .navbar-nav > li > a:focus {
+  color: transparent;
+  background-image: linear-gradient(90deg, #FF9000, #FFD37A, #FF7A00, #FFB44D, #FF9000);
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 14.5px;
+  letter-spacing: 1.6px;
+  animation: tma-gradient-sweep 1.6s linear infinite;
+}
+.tma-navbar .navbar-nav > li > a:hover::after,
+.tma-navbar .navbar-nav > li > a:focus::after,
+.tma-navbar .navbar-nav > li.active > a::after {
+  transform: scaleX(1);
 }
 .tma-navbar .navbar-toggle {
   border-color: #444;
@@ -289,13 +369,60 @@
   line-height: 1.6;
 }
 
-/* Buttons — subtle lift on hover for more tactile feel */
+/* Buttons — gradient fill + lift on hover for a richer, more premium feel */
 .btn-lg, .btn-primary, .btn-default {
   transition: transform 0.65s ease, box-shadow 0.65s ease;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #FFA733, #FF7A00);
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(255, 122, 0, 0.3);
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background: linear-gradient(135deg, #ffb24d, #ff8a1a) !important;
+  border-color: transparent !important;
 }
 .fh5co-cover .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Cards — softer, deeper radius for a more modern feel */
+.tma-category-card,
+.tma-testimonial,
+.tma-team-card,
+.work {
+  border-radius: 14px;
+}
+.tma-category-card {
+  border-top: none;
+  border-radius: 14px;
+  position: relative;
+}
+.tma-category-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(90deg, #FFB44D, #FF7A00);
+}
+
+/* Icon badges — soft gradient instead of flat gray, more depth */
+.tma-category-icon,
+.feature-left .icon {
+  background: linear-gradient(145deg, #ffffff, #efeff2);
+  box-shadow: 0 2px 6px rgba(20, 20, 30, 0.08), inset 0 0 0 1px rgba(0,0,0,0.03);
+}
+#fh5co-leadership .feature-left .icon {
+  background: linear-gradient(135deg, #FFA733, #FF7A00);
+  box-shadow: 0 4px 14px rgba(255, 122, 0, 0.35);
+}
+
+/* Hero overlay — subtle warm glow at the base instead of a flat tint */
+.fh5co-cover .overlay,
+#fh5co-header .overlay {
+  background: linear-gradient(180deg, rgba(10,10,15,0.72) 0%, rgba(10,10,15,0.55) 55%, rgba(40,20,5,0.62) 100%);
 }
 
 /* Contact details (email, phone) — make them stand out from surrounding copy */
@@ -373,6 +500,20 @@ a.tma-contact-highlight:focus {
   position: relative;
   padding-bottom: 22px;
 }
+
+/* Section dividers — some adjacent sections share the same background color
+   (white-on-white, gray-on-gray) with nothing marking the boundary between
+   them. A hairline top border gives each section a clear edge regardless of
+   what color the section above happens to be. */
+.tma-section-divider {
+  border-top: 1px solid #ececef;
+}
+.tma-inline-divider {
+  border: none;
+  border-top: 1px solid #ececef;
+  max-width: 720px;
+  margin: 50px auto;
+}
 .fh5co-heading h2::after {
   content: "";
   position: absolute;
@@ -418,12 +559,21 @@ a.tma-contact-highlight:focus {
 
 /* About — stat strip */
 .tma-stats-section {
-  background: #14141a;
+  background: #f7f7f9;
   padding: 40px 0;
 }
 .tma-stat {
   text-align: center;
-  padding: 15px 10px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(20, 20, 30, 0.06);
+  padding: 26px 10px;
+  margin: 0 10px 20px;
+  transition: transform 0.65s ease, box-shadow 0.65s ease;
+}
+.tma-stat:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(20, 20, 30, 0.1);
 }
 .tma-stat .tma-stat-number {
   display: block;
@@ -435,7 +585,7 @@ a.tma-contact-highlight:focus {
 .tma-stat .tma-stat-label {
   display: block;
   margin-top: 8px;
-  color: #b8b8bd;
+  color: #6b6b70;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -443,17 +593,42 @@ a.tma-contact-highlight:focus {
 
 /* About — technology / skill pills */
 .tma-skill-groups {
-  padding: 20px 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px -15px 10px;
 }
 .tma-skill-group {
-  margin-bottom: 30px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(20, 20, 30, 0.06);
+  padding: 28px 26px;
+  margin: 0 15px 30px;
+  flex: 1 1 280px;
+  transition: transform 0.65s ease, box-shadow 0.65s ease;
+}
+.tma-skill-group:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(20, 20, 30, 0.1);
+}
+.tma-skill-group-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffffff, #efeff2);
+  color: #FF9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(20, 20, 30, 0.08);
 }
 .tma-skill-group h4 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #8a8a90;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #1c1c1f;
   margin-bottom: 14px;
 }
 .tma-skill-pills {
@@ -473,9 +648,29 @@ a.tma-contact-highlight:focus {
 
 /* Footer (Creative Chaos style: logo/tagline/social row + 4 link columns) */
 .tma-footer {
-  background: #0d0d10;
+  position: relative;
+  background: linear-gradient(180deg, #0f0f13 0%, #0a0a0d 100%);
   color: #b8b8bd;
   padding: 60px 0 0;
+  overflow: hidden;
+}
+.tma-footer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF7A00, #FFB44D, #FF7A00);
+}
+.tma-footer::after {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 122, 0, 0.12), transparent 70%);
+  pointer-events: none;
 }
 .tma-footer a {
   color: #b8b8bd;
@@ -485,6 +680,25 @@ a.tma-contact-highlight:focus {
 .tma-footer a:focus {
   color: #FF9000;
   text-decoration: none;
+}
+.tma-footer-columns a {
+  position: relative;
+  display: inline-block;
+}
+.tma-footer-columns a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: #FF9000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.tma-footer-columns a:hover::after {
+  transform: scaleX(1);
 }
 .tma-footer-top {
   display: flex;
@@ -496,9 +710,12 @@ a.tma-contact-highlight:focus {
 }
 .tma-footer-brand {
   font-size: 24px;
-  font-weight: 700;
-  color: #fff;
   letter-spacing: 2px;
+}
+.tma-footer-brand:hover {
+  font-size: 27px;
+  letter-spacing: 3px;
+  animation: tma-gradient-sweep 1.6s linear infinite;
 }
 .tma-footer-tagline {
   margin: 6px 0 0;
@@ -531,13 +748,22 @@ a.tma-contact-highlight:focus {
   border: 1px solid #333338;
   border-radius: 50%;
   color: #e6e6e6;
+  transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease, color 0.35s ease;
 }
 .tma-footer-social a:hover {
-  border-color: #FF9000;
-  color: #FF9000;
+  border-color: transparent;
+  background: linear-gradient(135deg, #FFB44D, #FF7A00);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(255, 122, 0, 0.35);
 }
 .tma-footer-columns {
-  padding: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 0 20px;
+}
+.tma-footer-columns > [class*="col-"] {
+  flex: 1 1 170px;
 }
 .tma-footer-columns h4 {
   color: #fff;
@@ -558,13 +784,31 @@ a.tma-contact-highlight:focus {
 }
 .tma-footer-bottom {
   border-top: 1px solid #232327;
-  padding: 22px 0;
+  padding: 10px 0;
   text-align: center;
   font-size: 13px;
   color: #6f6f75;
 }
+.tma-footer-bottom .tma-credit-highlight {
+  color: #FF9000;
+  font-weight: 600;
+}
+a.tma-footer-bottom-link {
+  color: #FF9000;
+  font-weight: 700;
+  white-space: nowrap;
+}
+a.tma-footer-bottom-link:hover,
+a.tma-footer-bottom-link:focus {
+  color: #ffb347;
+  text-decoration: underline;
+}
 .tma-footer-bottom a {
-  color: #8a8a90;
+  color: #fff;
+}
+.tma-copy-tma {
+  font-size: 15px;
+  letter-spacing: 0.5px;
 }
 
 /* Team card */
@@ -612,7 +856,10 @@ a.tma-contact-highlight:focus {
   gap: 14px;
   margin-bottom: 12px;
   position: relative;
-  left: 40px;
+  left: 20px;
+}
+.tma-team-avatar + .tma-team-name-row {
+  left: 0;
 }
 .tma-team-name-text {
   text-align: center;
