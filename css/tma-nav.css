@@ -1,3 +1,22 @@
+/* Design tokens — the brand orange and muted-text grays had drifted into 8
+   and 5 near-duplicate hex values respectively (leftover from iterative
+   tweaks). Consolidated here to a single source of truth: 4 orange stops
+   (solid, light, dark, and the pale "shimmer" used only in the animated
+   wordmark sweep) and 2 grays (muted text on light backgrounds, muted text
+   on dark backgrounds). Every color below replaces at least one former
+   one-off hex in this file. */
+:root {
+  --tma-primary: #FF9000;
+  --tma-primary-dark: #FF7A00;
+  --tma-primary-light: #FFB44D;
+  --tma-primary-shimmer: #FFD37A;
+  --tma-muted: #6b6b70;
+  --tma-muted-inverse: #8a8a90;
+  --tma-radius-sm: 8px;
+  --tma-radius-md: 14px;
+  --tma-radius-pill: 50px;
+}
+
 /* Typography — vendor theme used Space Mono (monospace) for everything, which
    reads as a code-editor/dev-tool font and undercuts the business-facing
    copy throughout the site. Poppins for headings/UI, Inter for body copy.
@@ -43,7 +62,7 @@ h1, h2, h3, h4, h5, h6,
 .tma-gradient-text {
   display: inline-block;
   font-weight: 700;
-  background-image: linear-gradient(90deg, #FF9000, #FFD37A, #FF7A00, #FFB44D, #FF9000);
+  background-image: linear-gradient(90deg, var(--tma-primary), var(--tma-primary-shimmer), var(--tma-primary-dark), var(--tma-primary-light), var(--tma-primary));
   background-size: 300% 100%;
   background-position: 0% 50%;
   -webkit-background-clip: text;
@@ -82,7 +101,9 @@ h1, h2, h3, h4, h5, h6,
   padding-top: 22px;
   padding-bottom: 22px;
   background: none;
-  transition: color 0.35s ease, font-size 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), letter-spacing 0.4s ease;
+  transform: scale(1) translateY(0);
+  transform-origin: center bottom;
+  transition: color 0.35s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .tma-navbar .navbar-nav > li > a::after {
   content: "";
@@ -91,28 +112,33 @@ h1, h2, h3, h4, h5, h6,
   right: 15px;
   bottom: 14px;
   height: 2px;
-  background: linear-gradient(90deg, #FFB44D, #FF7A00);
+  background: linear-gradient(90deg, var(--tma-primary-light), var(--tma-primary-dark));
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.35s ease;
 }
 .tma-navbar .navbar-nav > li.active > a {
-  color: #FF9000;
+  color: var(--tma-primary);
   background: transparent;
 }
 .tma-navbar .navbar-nav > li > a:hover,
 .tma-navbar .navbar-nav > li > a:focus {
   color: transparent;
-  background-image: linear-gradient(90deg, #FF9000, #FFD37A, #FF7A00, #FFB44D, #FF9000);
+  background-image: linear-gradient(90deg, var(--tma-primary), var(--tma-primary-shimmer), var(--tma-primary-dark), var(--tma-primary-light), var(--tma-primary));
   background-size: 300% 100%;
   background-position: 0% 50%;
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 14.5px;
-  letter-spacing: 1.6px;
+  transform: scale(1.05) translateY(-1px);
   animation: tma-gradient-sweep 1.6s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tma-navbar .navbar-nav > li > a:hover,
+  .tma-navbar .navbar-nav > li > a:focus {
+    transform: none;
+  }
 }
 .tma-navbar .navbar-nav > li > a:hover::after,
 .tma-navbar .navbar-nav > li > a:focus::after,
@@ -176,14 +202,14 @@ h1, h2, h3, h4, h5, h6,
   color: #c7c7c7;
 }
 .tma-page-banner .breadcrumb-nav a {
-  color: #FF9000;
+  color: var(--tma-primary);
 }
 
 /* Testimonials */
 .tma-testimonial {
   background: #fff;
   border: 1px solid #eee;
-  border-radius: 4px;
+  border-radius: var(--tma-radius-md);
   padding: 30px;
   margin-bottom: 30px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.04);
@@ -203,10 +229,15 @@ h1, h2, h3, h4, h5, h6,
   box-shadow: 0 16px 34px rgba(20, 20, 30, 0.25);
 }
 
-/* Form inputs — branded focus glow instead of default flat black border */
+/* Form inputs — Bootstrap's default 4px radius reads flatter than the
+   rest of the site's card/button scale; branded focus glow instead of the
+   default flat black border. */
+.form-control {
+  border-radius: var(--tma-radius-sm);
+}
 .form-control:focus,
 .form-control:active {
-  border-color: #FF9000 !important;
+  border-color: var(--tma-primary) !important;
   box-shadow: 0 0 0 4px rgba(255, 144, 0, 0.12) !important;
   transition: border-color 0.65s ease, box-shadow 0.65s ease;
 }
@@ -248,8 +279,8 @@ h1, h2, h3, h4, h5, h6,
 }
 .tma-category-card {
   background: #fff;
-  border-radius: 10px;
-  border-top: 4px solid #FF9000;
+  border-radius: var(--tma-radius-md);
+  border-top: 4px solid var(--tma-primary);
   box-shadow: 0 4px 20px rgba(20, 20, 30, 0.06);
   padding: 36px 32px 30px;
   width: 100%;
@@ -264,7 +295,7 @@ h1, h2, h3, h4, h5, h6,
   height: 58px;
   border-radius: 50%;
   background: #f3f3f5;
-  color: #FF9000;
+  color: var(--tma-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,7 +309,7 @@ h1, h2, h3, h4, h5, h6,
   color: #1c1c1f;
 }
 .tma-category-card .tma-category-desc {
-  color: #8a8a90;
+  color: var(--tma-muted);
   font-size: 14px;
   margin-bottom: 22px;
   line-height: 1.5;
@@ -300,7 +331,7 @@ h1, h2, h3, h4, h5, h6,
   border-bottom: none;
 }
 .tma-service-list li i {
-  color: #FF9000;
+  color: var(--tma-primary);
   margin-right: 12px;
   font-size: 16px;
   width: 18px;
@@ -311,6 +342,7 @@ h1, h2, h3, h4, h5, h6,
 /* Consistent vertical rhythm across all major sections — standardized to
    24px top and bottom everywhere. */
 #fh5co-about,
+#fh5co-approach,
 #fh5co-values,
 #fh5co-leadership,
 #fh5co-quality,
@@ -355,7 +387,7 @@ h1, h2, h3, h4, h5, h6,
   display: table-cell;
   vertical-align: middle;
   height: 84px;
-  color: #FF9000 !important;
+  color: var(--tma-primary) !important;
 }
 .feature-left h3 {
   font-size: 20px;
@@ -365,8 +397,22 @@ h1, h2, h3, h4, h5, h6,
 }
 .feature-left p {
   font-size: 14.5px;
-  color: #6b6b70 !important;
+  color: var(--tma-muted) !important;
   line-height: 1.6;
+}
+
+/* Value-verb rows — five short value boxes that don't divide evenly into
+   Bootstrap's twelfths, so they're laid out with flexbox instead: five
+   across on wide screens, wrapping down gracefully on smaller ones. */
+.tma-value-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 24px;
+}
+.tma-value-row .feature-left {
+  flex: 1 1 180px;
+  max-width: 200px;
 }
 
 /* Buttons — gradient fill + lift on hover for a richer, more premium feel */
@@ -374,12 +420,12 @@ h1, h2, h3, h4, h5, h6,
   transition: transform 0.65s ease, box-shadow 0.65s ease;
 }
 .btn-primary {
-  background: linear-gradient(135deg, #FFA733, #FF7A00);
+  background: linear-gradient(135deg, var(--tma-primary-light), var(--tma-primary-dark));
   border-color: transparent;
   box-shadow: 0 6px 16px rgba(255, 122, 0, 0.3);
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background: linear-gradient(135deg, #ffb24d, #ff8a1a) !important;
+  background: linear-gradient(135deg, var(--tma-primary-shimmer), var(--tma-primary)) !important;
   border-color: transparent !important;
 }
 .fh5co-cover .btn:hover {
@@ -387,16 +433,45 @@ h1, h2, h3, h4, h5, h6,
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
+/* "Contact Us" — the sole closing CTA on dark sections, so it gets the full
+   gradient treatment: solid brand gradient fill, glowing ring on hover, and
+   a crisp focus-visible ring for keyboard users. */
+.btn-default,
+#fh5co-started .btn-default {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--tma-primary-light), var(--tma-primary-dark)) !important;
+  color: #fff !important;
+  border: 2px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: var(--tma-radius-pill) !important;
+  box-shadow: 0 6px 18px rgba(255, 122, 0, 0.35);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active,
+#fh5co-started .btn-default:hover, #fh5co-started .btn-default:focus, #fh5co-started .btn-default:active {
+  background: linear-gradient(135deg, var(--tma-primary-shimmer), var(--tma-primary)) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: #fff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(255, 122, 0, 0.55), 0 0 0 6px rgba(255, 144, 0, 0.15) !important;
+}
+.btn-default:focus-visible,
+#fh5co-started .btn-default:focus-visible {
+  outline: 3px solid #fff !important;
+  outline-offset: 3px;
+}
+
 /* Cards — softer, deeper radius for a more modern feel */
 .tma-category-card,
 .tma-testimonial,
 .tma-team-card,
 .work {
-  border-radius: 14px;
+  border-radius: var(--tma-radius-md);
 }
 .tma-category-card {
   border-top: none;
-  border-radius: 14px;
+  border-radius: var(--tma-radius-md);
   position: relative;
 }
 .tma-category-card::before {
@@ -404,18 +479,24 @@ h1, h2, h3, h4, h5, h6,
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  border-radius: 14px 14px 0 0;
-  background: linear-gradient(90deg, #FFB44D, #FF7A00);
+  border-radius: var(--tma-radius-md) var(--tma-radius-md) 0 0;
+  background: linear-gradient(90deg, var(--tma-primary-light), var(--tma-primary-dark));
 }
 
-/* Icon badges — soft gradient instead of flat gray, more depth */
+/* Icon badges — soft gradient instead of flat gray, more depth. On hover the
+   card lifts (.feature-left:hover) and the icon itself gains a brand-colored
+   ring, so the interaction feedback isn't limited to the card's shadow. */
 .tma-category-icon,
 .feature-left .icon {
   background: linear-gradient(145deg, #ffffff, #efeff2);
   box-shadow: 0 2px 6px rgba(20, 20, 30, 0.08), inset 0 0 0 1px rgba(0,0,0,0.03);
+  transition: box-shadow 0.4s ease;
+}
+.feature-left:hover .icon {
+  box-shadow: 0 4px 14px rgba(255, 144, 0, 0.25), inset 0 0 0 2px var(--tma-primary-light);
 }
 #fh5co-leadership .feature-left .icon {
-  background: linear-gradient(135deg, #FFA733, #FF7A00);
+  background: linear-gradient(135deg, var(--tma-primary-light), var(--tma-primary-dark));
   box-shadow: 0 4px 14px rgba(255, 122, 0, 0.35);
 }
 
@@ -427,12 +508,12 @@ h1, h2, h3, h4, h5, h6,
 
 /* Contact details (email, phone) — make them stand out from surrounding copy */
 .tma-contact-highlight {
-  color: #FF9000;
+  color: var(--tma-primary);
   font-weight: 700;
 }
 a.tma-contact-highlight:hover,
 a.tma-contact-highlight:focus {
-  color: #ff9b1a;
+  color: var(--tma-primary-dark);
   text-decoration: underline;
 }
 .tma-phone-line {
@@ -454,7 +535,7 @@ a.tma-contact-highlight:focus {
   color: #fff !important;
   font-weight: 700;
   padding: 8px 20px;
-  border-radius: 24px;
+  border-radius: var(--tma-radius-pill);
   font-size: 14px;
   transition: transform 0.65s ease, box-shadow 0.65s ease;
 }
@@ -522,11 +603,23 @@ a.tma-contact-highlight:focus {
   transform: translateX(-50%);
   width: 56px;
   height: 3px;
-  background: #FF9000;
+  background: var(--tma-primary);
   border-radius: 2px;
 }
 .fh5co-bg-dark .fh5co-heading h2::after {
   background: #fff;
+}
+/* Alternating section alignment: sections that slide in from the right sit
+   left-aligned, sections that slide in from the left sit right-aligned —
+   the underline accent under each h2 follows the same edge. */
+.text-left .fh5co-heading h2::after {
+  left: 0;
+  transform: none;
+}
+.text-right .fh5co-heading h2::after {
+  left: auto;
+  right: 0;
+  transform: none;
 }
 
 /* Our Capabilities / Leadership / Our Journey — distinct looks */
@@ -534,7 +627,7 @@ a.tma-contact-highlight:focus {
   background: #fff;
 }
 #fh5co-leadership .feature-left .icon {
-  background: #FF9000;
+  background: var(--tma-primary);
 }
 #fh5co-leadership .feature-left .icon i {
   color: #fff !important;
@@ -542,13 +635,61 @@ a.tma-contact-highlight:focus {
 #fh5co-resume {
   background: #f7f7f9;
 }
+#fh5co-approach {
+  background: #f7f7f9;
+}
 
-/* Hero: pull the headline + subtitle + description block up 50px */
+/* Hero: matches .tma-page-banner's height and title/description spacing —
+   same 110px/70px padding, same 10px gap between the title and the line
+   right after it — instead of a bespoke fixed-height/flexbox system, so the
+   home hero and every inner page banner size themselves the same way. */
 .tma-hero-shift {
-  margin: 60px 0;
+  margin: 0;
+  position: relative;
+  top: 20px;
 }
 .tma-hero-shift h1 {
-  margin-top: -20px;
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+.tma-hero-shift h3 {
+  margin-bottom: 0;
+}
+.tma-hero-shift .tma-slogan-line--soft {
+  margin-top: 10px;
+  font-size: 16.5px;
+  color: #fff;
+  opacity: 1;
+}
+
+/* Hero slogan — a short, bold statement in place of the previous multi-line
+   paragraph stack, sized to stand out against the hero. */
+.tma-hero-big-slogan {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fff;
+  margin: 10px 0 0;
+}
+@media (max-width: 768px) {
+  .tma-hero-big-slogan {
+    font-size: 24px;
+  }
+}
+
+#fh5co-header.tma-hero-compact,
+.tma-hero-compact,
+#fh5co-header.tma-hero-compact .display-tc,
+.tma-hero-compact .display-tc {
+  height: 294px;
+}
+.tma-hero-compact .display-t {
+  display: flex;
+}
+.tma-hero-compact .display-tc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Hero body copy — base theme only styles h1-h3, leaves <p> dark and unreadable on the dark cover */
@@ -565,7 +706,7 @@ a.tma-contact-highlight:focus {
 .tma-stat {
   text-align: center;
   background: #fff;
-  border-radius: 14px;
+  border-radius: var(--tma-radius-md);
   box-shadow: 0 4px 16px rgba(20, 20, 30, 0.06);
   padding: 26px 10px;
   margin: 0 10px 20px;
@@ -579,13 +720,13 @@ a.tma-contact-highlight:focus {
   display: block;
   font-size: 42px;
   font-weight: 700;
-  color: #FF9000;
+  color: var(--tma-primary);
   line-height: 1.1;
 }
 .tma-stat .tma-stat-label {
   display: block;
   margin-top: 8px;
-  color: #6b6b70;
+  color: var(--tma-muted);
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -599,7 +740,7 @@ a.tma-contact-highlight:focus {
 }
 .tma-skill-group {
   background: #fff;
-  border-radius: 14px;
+  border-radius: var(--tma-radius-md);
   box-shadow: 0 4px 16px rgba(20, 20, 30, 0.06);
   padding: 28px 26px;
   margin: 0 15px 30px;
@@ -615,7 +756,7 @@ a.tma-contact-highlight:focus {
   height: 50px;
   border-radius: 50%;
   background: linear-gradient(145deg, #ffffff, #efeff2);
-  color: #FF9000;
+  color: var(--tma-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -659,7 +800,7 @@ a.tma-contact-highlight:focus {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #FF7A00, #FFB44D, #FF7A00);
+  background: linear-gradient(90deg, var(--tma-primary-dark), var(--tma-primary-light), var(--tma-primary-dark));
 }
 .tma-footer::after {
   content: "";
@@ -671,6 +812,24 @@ a.tma-contact-highlight:focus {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 122, 0, 0.12), transparent 70%);
   pointer-events: none;
+  opacity: 0.7;
+  transform: scale(1);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+/* Whole footer reacts when any link inside it is hovered — the corner glow
+   blooms and a faint warm wash lifts the whole section, not just the link.
+   .tma-footer-glow is the JS fallback for browsers without :has() support. */
+.tma-footer {
+  transition: box-shadow 0.6s ease;
+}
+.tma-footer:has(a:hover),
+.tma-footer.tma-footer-glow {
+  box-shadow: inset 0 0 160px rgba(255, 122, 0, 0.1);
+}
+.tma-footer:has(a:hover)::after,
+.tma-footer.tma-footer-glow::after {
+  opacity: 1;
+  transform: scale(1.45);
 }
 .tma-footer a {
   color: #b8b8bd;
@@ -678,12 +837,18 @@ a.tma-contact-highlight:focus {
 }
 .tma-footer a:hover,
 .tma-footer a:focus {
-  color: #FF9000;
+  color: var(--tma-primary);
   text-decoration: none;
 }
 .tma-footer-columns a {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  transform: translateX(0);
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+.tma-footer-columns a:hover {
+  transform: translateX(3px);
 }
 .tma-footer-columns a::after {
   content: "";
@@ -692,7 +857,7 @@ a.tma-contact-highlight:focus {
   bottom: -3px;
   width: 100%;
   height: 1px;
-  background: #FF9000;
+  background: var(--tma-primary);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s ease;
@@ -719,7 +884,7 @@ a.tma-contact-highlight:focus {
 }
 .tma-footer-tagline {
   margin: 6px 0 0;
-  color: #8a8a90;
+  color: var(--tma-muted-inverse);
   font-size: 14px;
 }
 .tma-footer-social {
@@ -741,9 +906,9 @@ a.tma-contact-highlight:focus {
 }
 .tma-footer-social a {
   display: inline-block;
-  width: 36px;
-  height: 36px;
-  line-height: 36px;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
   text-align: center;
   border: 1px solid #333338;
   border-radius: 50%;
@@ -752,7 +917,7 @@ a.tma-contact-highlight:focus {
 }
 .tma-footer-social a:hover {
   border-color: transparent;
-  background: linear-gradient(135deg, #FFB44D, #FF7A00);
+  background: linear-gradient(135deg, var(--tma-primary-light), var(--tma-primary-dark));
   color: #fff;
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(255, 122, 0, 0.35);
@@ -762,11 +927,67 @@ a.tma-contact-highlight:focus {
 }
 .tma-footer-columns [class*="col-"] {
   margin-bottom: 20px;
+  padding: 10px 12px;
+  border-radius: var(--tma-radius-sm);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.4s ease;
+}
+/* At desktop widths, equal-width grid columns leave uneven trailing
+   whitespace when link text is short (e.g. "Connect") vs long (e.g.
+   "Solutions"), which reads as a lopsided left/right margin even though the
+   underlying column boxes are symmetric. Sizing each column to its own
+   content and distributing them with space-between makes the actual visible
+   text — not the invisible column box — line up flush with the container
+   edges on both sides. */
+@media (min-width: 992px) {
+  .tma-footer-columns {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  /* Bootstrap's .row clearfix ::before/::after generate boxes that become
+     real flex items once the row is flexed, which throws off
+     justify-content: space-between. Not needed once flex handles layout. */
+  .tma-footer-columns::before,
+  .tma-footer-columns::after {
+    content: none;
+  }
+  .tma-footer-columns [class*="col-"] {
+    float: none;
+    width: auto;
+    flex: 0 0 auto;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .tma-footer-columns [class*="col-"]:first-child {
+    padding-left: 0;
+  }
+  .tma-footer-columns [class*="col-"]:last-child {
+    padding-right: 0;
+  }
+}
+/* Whole column (heading + all its links) reacts together when any link
+   inside it is hovered — not just the individual link. .tma-col-active is
+   the JS fallback for browsers without :has() support. */
+.tma-footer-columns [class*="col-"]:has(a:hover),
+.tma-footer-columns [class*="col-"].tma-col-active {
+  transform: translateY(-2px);
+  background: rgba(255, 144, 0, 0.06);
+}
+.tma-footer-columns [class*="col-"]:has(a:hover) h4,
+.tma-footer-columns [class*="col-"].tma-col-active h4 {
+  color: var(--tma-primary);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tma-footer-columns [class*="col-"]:has(a:hover),
+  .tma-footer-columns [class*="col-"].tma-col-active {
+    transform: none;
+  }
 }
 .tma-footer-columns h4 {
   color: #fff;
   font-size: 13px;
   font-weight: 700;
+  transition: color 0.4s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 18px;
@@ -785,20 +1006,20 @@ a.tma-contact-highlight:focus {
   padding: 10px 0;
   text-align: center;
   font-size: 13px;
-  color: #6f6f75;
+  color: var(--tma-muted-inverse);
 }
 .tma-footer-bottom .tma-credit-highlight {
-  color: #FF9000;
+  color: var(--tma-primary);
   font-weight: 600;
 }
 a.tma-footer-bottom-link {
-  color: #FF9000;
+  color: var(--tma-primary);
   font-weight: 700;
   white-space: nowrap;
 }
 a.tma-footer-bottom-link:hover,
 a.tma-footer-bottom-link:focus {
-  color: #ffb347;
+  color: var(--tma-primary-dark);
   text-decoration: underline;
 }
 .tma-footer-bottom a {
@@ -820,27 +1041,27 @@ a.tma-footer-bottom-link:focus {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 18px;
-  border: 4px solid #FF9000;
+  border: 4px solid var(--tma-primary);
 }
 .tma-team-avatar {
   width: 160px;
   height: 160px;
   border-radius: 50%;
   background: rgba(255, 144, 0, 0.12);
-  color: #FF9000;
+  color: var(--tma-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 44px;
   font-weight: 700;
   margin: 0 auto 18px;
-  border: 4px solid #FF9000;
+  border: 4px solid var(--tma-primary);
 }
 .tma-team-card h3 {
   margin-bottom: 2px;
 }
 .tma-team-card .role {
-  color: #FF9000;
+  color: var(--tma-primary);
   font-weight: 600;
   font-size: 13px;
   text-transform: uppercase;
@@ -877,10 +1098,172 @@ a.tma-footer-bottom-link:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FF9000;
+  color: var(--tma-primary);
   transition: transform 0.65s ease, border-color 0.65s ease;
 }
 .tma-team-linkedin:hover {
   transform: translateY(-2px);
-  border-color: #FF9000;
+  border-color: var(--tma-primary);
+}
+
+/* Smooth in-page scrolling (anchor links, gototop) */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Button ripple — tactile click feedback, ring expands from the click point */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+.tma-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  transform: scale(0);
+  animation: tma-ripple-expand 0.6s ease-out;
+  pointer-events: none;
+}
+@keyframes tma-ripple-expand {
+  to { transform: scale(2.6); opacity: 0; }
+}
+
+/* Card tilt — subtle 3D perspective shift toward the cursor, applied via
+   inline transform set in JS alongside the spotlight tracking. */
+.tma-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease, box-shadow 0.65s ease;
+  will-change: transform;
+}
+
+/* Scroll progress bar — thin gradient line across the top that fills as the
+   page scrolls, driven by js/tma-effects.js */
+.tma-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--tma-primary), var(--tma-primary-shimmer), var(--tma-primary-dark));
+  z-index: 2000;
+  transition: width 0.1s linear;
+}
+
+/* Cursor-tracked spotlight glow on cards — a soft radial highlight that
+   follows the mouse, positioned via --x/--y custom properties set in JS. */
+.tma-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+.tma-spotlight::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(320px circle at var(--x, 50%) var(--y, 50%), rgba(255, 144, 0, 0.14), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.tma-spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Animated stat count-up target styling stays visually identical; the
+   number itself is written by JS. */
+.tma-stat-number[data-count-to] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Back to top — redesigned with gradient fill and a soft pulse ring */
+.gototop a {
+  background: linear-gradient(135deg, var(--tma-primary-light), var(--tma-primary-dark)) !important;
+  box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.gototop a:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 10px 26px rgba(255, 122, 0, 0.55);
+}
+.gototop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 122, 0, 0.5);
+  animation: tma-pulse-ring 2.2s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes tma-pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gototop::after { animation: none; }
+}
+
+/* ---- Accessibility: skip link + global focus-visible fallback ---- */
+.tma-skip-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  padding: 12px 20px;
+  background: var(--tma-primary-dark);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+}
+.tma-skip-link:hover,
+.tma-skip-link:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--tma-primary-dark);
+  outline-offset: 2px;
+}
+
+/* Slogan stacks — replace dense paragraphs with a handful of short, punchy
+   lines. Each line takes a different visual weight so the block reads like
+   a quick rhythm instead of a wall of text. Colors are opacity-based against
+   the surrounding text color so the same classes work on light and dark
+   sections without a separate light/dark variant. */
+.tma-slogan {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+.tma-slogan-line {
+  margin: 0;
+  line-height: 1.45;
+}
+.tma-slogan-line--lead {
+  font-size: 19px;
+  font-weight: 700;
+  opacity: 1;
+}
+.tma-slogan-line--emphasis {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--tma-primary-dark) !important;
+}
+.tma-slogan-line--body {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+.tma-slogan-line--soft {
+  font-size: 14.5px;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.65;
+}
+.text-center .tma-slogan {
+  align-items: center;
 }

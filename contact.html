@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Contact — TMA</title>
+	<title>Contact — TMA Globals</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Get in touch with TMA to discuss your MVP, SaaS or mobile app." />
-	<meta name="author" content="TMA" />
+	<meta name="description" content="Get in touch with TMA Globals to discuss your MVP, SaaS or mobile app." />
+	<meta name="author" content="TMA Globals" />
 
 	<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -23,6 +23,8 @@
 </head>
 <body>
 
+	<a href="#page" class="sr-only sr-only-focusable tma-skip-link">Skip to main content</a>
+
 	<div class="fh5co-loader"></div>
 
 	<nav class="navbar navbar-default tma-navbar" role="navigation">
@@ -34,7 +36,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand tma-gradient-text" href="index.html">TMA</a>
+				<a class="navbar-brand tma-gradient-text" href="index.html">TMA Globals</a>
 			</div>
 			<div class="collapse navbar-collapse" id="tma-nav-collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -45,7 +47,7 @@
 					<li><a href="testimonials.html">Testimonials</a></li>
 					<li><a href="careers.html">Careers</a></li>
 					<li><a href="team.html">Team</a></li>
-					<li class="active"><a href="contact.html">Contact</a></li>
+					<li class="active"><a href="contact.html" aria-current="page">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -57,7 +59,7 @@
 			<div class="overlay"></div>
 			<div class="container tma-page-banner-content">
 				<h1>Contact</h1>
-				<p>Tell us about your product — we'll get back to you quickly.</p>
+				<p>Tell us about your product — we'll get back to you quickly with a scope that puts your goals first.</p>
 			</div>
 		</header>
 
@@ -70,7 +72,7 @@
 						<p>You can reach us at <a href="mailto:pehlaj.rai108@gmail.com" class="tma-contact-highlight">pehlaj.rai108@gmail.com</a></p>
 						<p class="tma-phone-line">
 							Call: <a href="tel:+923352899951" class="tma-contact-highlight tma-phone-highlight">+92 335 2899951</a>
-							<a href="https://wa.me/923352899951?text=Hi%20TMA%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" class="tma-whatsapp-btn"><i class="icon-whatsapp"></i> WhatsApp Us</a>
+							<a href="https://wa.me/923352899951?text=Hi%20TMA%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="tma-whatsapp-btn"><i class="icon-whatsapp"></i> WhatsApp Us</a>
 						</p>
 					</div>
 				</div>
@@ -86,30 +88,35 @@
 				<form action="#">
 					<div class="row form-group">
 						<div class="col-md-6">
-							<input type="text" id="fname" class="form-control" placeholder="Your firstname">
+							<label for="fname" class="sr-only">First name</label>
+							<input type="text" name="fname" id="fname" class="form-control" placeholder="Your firstname" autocomplete="given-name" required aria-required="true">
 						</div>
 					</div>
 					<div class="row form-group">
 						<div class="col-md-6">
-							<input type="text" id="lname" class="form-control" placeholder="Your lastname">
+							<label for="lname" class="sr-only">Last name</label>
+							<input type="text" name="lname" id="lname" class="form-control" placeholder="Your lastname" autocomplete="family-name" required aria-required="true">
 						</div>
 					</div>
 
 					<div class="row form-group">
 						<div class="col-md-12">
-							<input type="text" id="email" class="form-control" placeholder="Your email address">
+							<label for="email" class="sr-only">Email address</label>
+							<input type="email" name="email" id="email" class="form-control" placeholder="Your email address" autocomplete="email" required aria-required="true">
 						</div>
 					</div>
 
 					<div class="row form-group">
 						<div class="col-md-12">
-							<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
+							<label for="subject" class="sr-only">Subject</label>
+							<input type="text" name="subject" id="subject" class="form-control" placeholder="Your subject of this message">
 						</div>
 					</div>
 
 					<div class="row form-group">
 						<div class="col-md-12">
-							<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+							<label for="message" class="sr-only">Message</label>
+							<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us" required aria-required="true"></textarea>
 						</div>
 					</div>
 					<div class="form-group">
@@ -128,13 +135,13 @@
 		<div class="container">
 			<div class="tma-footer-top">
 				<div>
-					<div class="tma-footer-brand tma-gradient-text">TMA</div>
+					<div class="tma-footer-brand tma-gradient-text">TMA Globals</div>
 					<p class="tma-footer-tagline">We build AI-powered products.</p>
 				</div>
 				<ul class="tma-footer-social">
-					<li><a href="https://www.linkedin.com/in/pehlajtejani/" target="_blank"><i class="icon-linkedin2"></i></a></li>
-					<li><a href="https://twitter.com/TMAtech" target="_blank"><i class="icon-twitter2"></i></a></li>
-					<li><a href="https://www.facebook.com/TMAtech" target="_blank"><i class="icon-facebook2"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/pehlajtejani/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="icon-linkedin2"></i></a></li>
+					<li><a href="https://twitter.com/TMAtech" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="icon-twitter2"></i></a></li>
+					<li><a href="https://www.facebook.com/TMAtech" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="icon-facebook2"></i></a></li>
 				</ul>
 			</div>
 			<div class="row tma-footer-columns">
@@ -174,29 +181,29 @@
 					<h4>Get in Touch</h4>
 					<ul>
 						<li><a href="mailto:pehlaj.rai108@gmail.com">Email Us</a></li>
-						<li><a href="tel:+923352899951">+92 335 2899951</a></li>
-						<li><a href="https://wa.me/923352899951?text=Hi%20TMA%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank">WhatsApp Us</a></li>
+						<li><a href="tel:+923352899951">Call Us</a></li>
+						<li><a href="https://wa.me/923352899951?text=Hi%20TMA%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
 					</ul>
 				</div>
 				<div class="col-sm-4 col-md-2">
 					<h4>Connect</h4>
 					<ul>
-						<li><a href="https://www.linkedin.com/in/pehlajtejani/" target="_blank">LinkedIn</a></li>
-						<li><a href="https://twitter.com/TMAtech" target="_blank">Twitter</a></li>
-						<li><a href="https://www.facebook.com/TMAtech" target="_blank">Facebook</a></li>
+						<li><a href="https://www.linkedin.com/in/pehlajtejani/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+						<li><a href="https://twitter.com/TMAtech" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+						<li><a href="https://www.facebook.com/TMAtech" target="_blank" rel="noopener noreferrer">Facebook</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="tma-footer-bottom">
 			<div class="container">
-				&copy; 2026 <span class="tma-copy-tma tma-gradient-text">TMA</span>. All rights reserved. Designed by <a href="https://www.linkedin.com/in/pehlajtejani/" target="_blank" class="tma-footer-bottom-link">PG-TEJANI</a>.
+				&copy; 2026 <span class="tma-copy-tma tma-gradient-text">TMA Globals</span>. All rights reserved. Designed by <a href="https://www.linkedin.com/in/pehlajtejani/" target="_blank" rel="noopener noreferrer" class="tma-footer-bottom-link">PG-TEJANI</a>.
 			</div>
 		</div>
 	</footer>
 
 	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+		<a href="#" class="js-gotop" aria-label="Back to top"><i class="icon-arrow-up22"></i></a>
 	</div>
 
 	<script src="js/jquery.min.js"></script>
@@ -209,6 +216,7 @@
 	<script src="js/google_map.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/scroll-reveal.js"></script>
+	<script src="js/tma-effects.js"></script>
 
 </body>
 </html>
