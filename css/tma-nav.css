@@ -1030,6 +1030,167 @@ a.tma-footer-bottom-link:focus {
   letter-spacing: 0.5px;
 }
 
+/* Work Summary — project cards */
+.tma-project-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tma-project-row > [class*="col-"] {
+  display: flex;
+  margin-bottom: 30px;
+}
+.tma-project-card {
+  background: #fff;
+  border-radius: var(--tma-radius-md);
+  border-top: 4px solid var(--tma-primary);
+  box-shadow: 0 4px 20px rgba(20, 20, 30, 0.06);
+  padding: 30px 28px 26px;
+  width: 100%;
+  transition: transform 0.75s ease, box-shadow 0.75s ease;
+}
+.tma-project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(20, 20, 30, 0.12);
+}
+.tma-project-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.tma-project-icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffffff, #efeff2);
+  box-shadow: 0 2px 6px rgba(20, 20, 30, 0.08), inset 0 0 0 1px rgba(0,0,0,0.03);
+  color: var(--tma-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+}
+.tma-project-head h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1c1c1f;
+}
+.tma-project-platform {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--tma-muted);
+}
+.tma-project-env {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tma-env-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--tma-radius-pill);
+  background: #f7f7f9;
+  border: 1px solid #ececef;
+  color: var(--tma-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+.tma-project-summary {
+  color: #4a4a50;
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.tma-project-card.tma-expanded .tma-project-summary {
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+}
+.tma-project-more {
+  display: none;
+  margin-top: 6px;
+}
+.tma-project-card.tma-expanded .tma-project-more {
+  display: block;
+}
+.tma-project-more h4 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1c1c1f;
+  margin-bottom: 10px;
+}
+.tma-project-more ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tma-project-more li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #4a4a50;
+  line-height: 1.5;
+}
+.tma-project-more li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tma-primary);
+}
+.tma-project-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--tma-primary);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.35s ease;
+}
+.tma-project-toggle-btn:hover,
+.tma-project-toggle-btn:focus {
+  color: var(--tma-primary-dark);
+}
+.tma-project-toggle-btn i {
+  font-size: 10px;
+  transition: transform 0.35s ease;
+}
+.tma-project-card.tma-expanded .tma-project-toggle-btn i {
+  transform: rotate(180deg);
+}
+.tma-toggle-label-less {
+  display: none;
+}
+.tma-project-card.tma-expanded .tma-toggle-label-more {
+  display: none;
+}
+.tma-project-card.tma-expanded .tma-toggle-label-less {
+  display: inline;
+}
+
 /* Team card */
 .tma-team-card {
   text-align: center;
